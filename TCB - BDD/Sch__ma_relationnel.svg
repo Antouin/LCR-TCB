@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg
+PUBLIC "-//W3C//DTD SVG 1.1//EN"
+       "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg viewBox="113 24 1237 624" width="1124px" height="600px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+   <line x1="439" y1="546" x2="429" y2="546" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="418" y1="393" x2="428" y2="393" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="429" y1="546" x2="418" y2="393" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="431.5" y1="546" x2="435.03553390593" y2="549.53553390593" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="431.5" y1="546" x2="435.03553390593" y2="542.46446609407" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="423" y1="393" x2="419.46446609407" y2="396.53553390593" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="423" y1="393" x2="419.46446609407" y2="389.46446609407" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="540" y1="566" x2="550" y2="566" style="stroke:#c00;stroke-width:1;"/>
+   <line x1="1094" y1="118" x2="1104" y2="118" style="stroke:#c00;stroke-width:1;"/>
+   <line x1="550" y1="566" x2="1094" y2="118" style="stroke:#c00;stroke-width:1;"/>
+   <line x1="547.5" y1="566" x2="543.96446609407" y2="569.53553390593" style="stroke:#c00;stroke-width:2;"/>
+   <line x1="547.5" y1="566" x2="543.96446609407" y2="562.46446609407" style="stroke:#c00;stroke-width:2;"/>
+   <line x1="1099" y1="118" x2="1095.4644660941" y2="121.53553390593" style="stroke:#c00;stroke-width:2;"/>
+   <line x1="1099" y1="118" x2="1095.4644660941" y2="114.46446609407" style="stroke:#c00;stroke-width:2;"/>
+   <line x1="233" y1="281" x2="243" y2="281" style="stroke:#bbb;stroke-width:1;"/>
+   <line x1="375" y1="263" x2="385" y2="263" style="stroke:#bbb;stroke-width:1;"/>
+   <line x1="243" y1="281" x2="375" y2="263" style="stroke:#bbb;stroke-width:1;"/>
+   <line x1="240.5" y1="281" x2="236.96446609407" y2="284.53553390593" style="stroke:#bbb;stroke-width:2;"/>
+   <line x1="240.5" y1="281" x2="236.96446609407" y2="277.46446609407" style="stroke:#bbb;stroke-width:2;"/>
+   <line x1="380" y1="263" x2="376.46446609407" y2="266.53553390593" style="stroke:#bbb;stroke-width:2;"/>
+   <line x1="380" y1="263" x2="376.46446609407" y2="259.46446609407" style="stroke:#bbb;stroke-width:2;"/>
+   <line x1="859" y1="69" x2="869" y2="69" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="1094" y1="118" x2="1104" y2="118" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="869" y1="69" x2="1094" y2="118" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="866.5" y1="69" x2="862.96446609407" y2="72.535533905933" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="866.5" y1="69" x2="862.96446609407" y2="65.464466094067" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="1099" y1="118" x2="1095.4644660941" y2="121.53553390593" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="1099" y1="118" x2="1095.4644660941" y2="114.46446609407" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="706" y1="166" x2="716" y2="166" style="stroke:#bbb;stroke-width:1;"/>
+   <line x1="1094" y1="118" x2="1104" y2="118" style="stroke:#bbb;stroke-width:1;"/>
+   <line x1="716" y1="166" x2="1094" y2="118" style="stroke:#bbb;stroke-width:1;"/>
+   <line x1="713.5" y1="166" x2="709.96446609407" y2="169.53553390593" style="stroke:#bbb;stroke-width:2;"/>
+   <line x1="713.5" y1="166" x2="709.96446609407" y2="162.46446609407" style="stroke:#bbb;stroke-width:2;"/>
+   <line x1="1099" y1="118" x2="1095.4644660941" y2="121.53553390593" style="stroke:#bbb;stroke-width:2;"/>
+   <line x1="1099" y1="118" x2="1095.4644660941" y2="114.46446609407" style="stroke:#bbb;stroke-width:2;"/>
+   <line x1="597" y1="186" x2="587" y2="186" style="stroke:#333;stroke-width:1;"/>
+   <line x1="480" y1="263" x2="470" y2="263" style="stroke:#333;stroke-width:1;"/>
+   <line x1="587" y1="186" x2="480" y2="263" style="stroke:#333;stroke-width:1;"/>
+   <line x1="589.5" y1="186" x2="593.03553390593" y2="189.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="589.5" y1="186" x2="593.03553390593" y2="182.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <line x1="475" y1="263" x2="478.53553390593" y2="266.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="475" y1="263" x2="478.53553390593" y2="259.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <line x1="1104" y1="298" x2="1094" y2="298" style="stroke:#333;stroke-width:1;"/>
+   <line x1="539" y1="393" x2="529" y2="393" style="stroke:#333;stroke-width:1;"/>
+   <line x1="1094" y1="298" x2="539" y2="393" style="stroke:#333;stroke-width:1;"/>
+   <line x1="1096.5" y1="298" x2="1100.0355339059" y2="301.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="1096.5" y1="298" x2="1100.0355339059" y2="294.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <line x1="534" y1="393" x2="537.53553390593" y2="396.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="534" y1="393" x2="537.53553390593" y2="389.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <line x1="914" y1="599" x2="924" y2="599" style="stroke:#333;stroke-width:1;"/>
+   <line x1="1094" y1="118" x2="1104" y2="118" style="stroke:#333;stroke-width:1;"/>
+   <line x1="924" y1="599" x2="1094" y2="118" style="stroke:#333;stroke-width:1;"/>
+   <line x1="921.5" y1="599" x2="917.96446609407" y2="602.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="921.5" y1="599" x2="917.96446609407" y2="595.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <line x1="1099" y1="118" x2="1095.4644660941" y2="121.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="1099" y1="118" x2="1095.4644660941" y2="114.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <rect width="101" height="20" x="439" y="516" style="fill:#007;stroke:black;"/>
+   <text width="101" height="20" x="444" y="530" style="fill:#fff;" font-family="Arial" font-size="16px"> Entraine</text>
+   <rect width="101" height="20" x="439" y="536" style="fill:#aea;stroke:black;"/>
+   <text width="101" height="20" x="444" y="550" style="fill:black;" font-family="Arial" font-size="16px">Id_entraineur</text>
+   <rect width="101" height="20" x="439" y="556" style="fill:#aea;stroke:black;"/>
+   <text width="101" height="20" x="444" y="570" style="fill:black;" font-family="Arial" font-size="16px">Id_personne</text>
+   <rect width="101" height="20" x="428" y="363" style="fill:#007;stroke:black;"/>
+   <text width="101" height="20" x="433" y="377" style="fill:#fff;" font-family="Arial" font-size="16px"> Entraineur</text>
+   <rect width="101" height="20" x="428" y="383" style="fill:#aea;stroke:black;"/>
+   <text width="101" height="20" x="433" y="397" style="fill:black;" font-family="Arial" font-size="16px">Id_entraineur</text>
+   <rect width="101" height="20" x="428" y="403" style="fill:none;stroke:black;"/>
+   <text width="101" height="20" x="433" y="417" style="fill:black;" font-family="Arial" font-size="16px">nom</text>
+   <rect width="101" height="20" x="428" y="423" style="fill:none;stroke:black;"/>
+   <text width="101" height="20" x="433" y="437" style="fill:black;" font-family="Arial" font-size="16px">prenom</text>
+   <rect width="105" height="20" x="128" y="51" style="fill:#007;stroke:black;"/>
+   <text width="105" height="20" x="133" y="65" style="fill:#fff;" font-family="Arial" font-size="16px"> Feuille_match</text>
+   <rect width="105" height="20" x="128" y="71" style="fill:#aea;stroke:black;"/>
+   <text width="105" height="20" x="133" y="85" style="fill:black;" font-family="Arial" font-size="16px">Id_feuille</text>
+   <rect width="105" height="20" x="128" y="91" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="105" style="fill:black;" font-family="Arial" font-size="16px">ace</text>
+   <rect width="105" height="20" x="128" y="111" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="125" style="fill:black;" font-family="Arial" font-size="16px">winner</text>
+   <rect width="105" height="20" x="128" y="131" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="145" style="fill:black;" font-family="Arial" font-size="16px">faute</text>
+   <rect width="105" height="20" x="128" y="151" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="165" style="fill:black;" font-family="Arial" font-size="16px">double_faute</text>
+   <rect width="105" height="20" x="128" y="171" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="185" style="fill:black;" font-family="Arial" font-size="16px">amorti</text>
+   <rect width="105" height="20" x="128" y="191" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="205" style="fill:black;" font-family="Arial" font-size="16px">smash</text>
+   <rect width="105" height="20" x="128" y="211" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="225" style="fill:black;" font-family="Arial" font-size="16px">volee</text>
+   <rect width="105" height="20" x="128" y="231" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="245" style="fill:black;" font-family="Arial" font-size="16px">let</text>
+   <rect width="105" height="20" x="128" y="251" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="265" style="fill:black;" font-family="Arial" font-size="16px">abandon</text>
+   <rect width="105" height="20" x="128" y="271" style="fill:none;stroke:black;"/>
+   <text width="105" height="20" x="133" y="285" style="fill:black;" font-family="Arial" font-size="16px">Id_personne</text>
+   <rect width="95" height="20" x="764" y="39" style="fill:#007;stroke:black;"/>
+   <text width="95" height="20" x="769" y="53" style="fill:#fff;" font-family="Arial" font-size="16px"> Joue</text>
+   <rect width="95" height="20" x="764" y="59" style="fill:#aea;stroke:black;"/>
+   <text width="95" height="20" x="769" y="73" style="fill:black;" font-family="Arial" font-size="16px">Id_personne</text>
+   <rect width="109" height="20" x="597" y="136" style="fill:#007;stroke:black;"/>
+   <text width="109" height="20" x="602" y="150" style="fill:#fff;" font-family="Arial" font-size="16px"> Joueur_Match</text>
+   <rect width="109" height="20" x="597" y="156" style="fill:#aea;stroke:black;"/>
+   <text width="109" height="20" x="602" y="170" style="fill:black;" font-family="Arial" font-size="16px">Id_personne</text>
+   <rect width="109" height="20" x="597" y="176" style="fill:#aea;stroke:black;"/>
+   <text width="109" height="20" x="602" y="190" style="fill:black;" font-family="Arial" font-size="16px">Id_match</text>
+   <rect width="85" height="20" x="385" y="233" style="fill:#007;stroke:black;"/>
+   <text width="85" height="20" x="390" y="247" style="fill:#fff;" font-family="Arial" font-size="16px"> Match</text>
+   <rect width="85" height="20" x="385" y="253" style="fill:#aea;stroke:black;"/>
+   <text width="85" height="20" x="390" y="267" style="fill:black;" font-family="Arial" font-size="16px">Id_match</text>
+   <rect width="85" height="20" x="385" y="273" style="fill:none;stroke:black;"/>
+   <text width="85" height="20" x="390" y="287" style="fill:black;" font-family="Arial" font-size="16px">date</text>
+   <rect width="85" height="20" x="385" y="293" style="fill:none;stroke:black;"/>
+   <text width="85" height="20" x="390" y="307" style="fill:black;" font-family="Arial" font-size="16px">adversaire</text>
+   <rect width="118" height="20" x="1104" y="88" style="fill:#007;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="102" style="fill:#fff;" font-family="Arial" font-size="16px"> Personnes</text>
+   <rect width="118" height="20" x="1104" y="108" style="fill:#aea;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="122" style="fill:black;" font-family="Arial" font-size="16px">Id_personne</text>
+   <rect width="118" height="20" x="1104" y="128" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="142" style="fill:black;" font-family="Arial" font-size="16px">nom</text>
+   <rect width="118" height="20" x="1104" y="148" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="162" style="fill:black;" font-family="Arial" font-size="16px">prenom</text>
+   <rect width="118" height="20" x="1104" y="168" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="182" style="fill:black;" font-family="Arial" font-size="16px">date_naissance</text>
+   <rect width="118" height="20" x="1104" y="188" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="202" style="fill:black;" font-family="Arial" font-size="16px">role</text>
+   <rect width="118" height="20" x="1104" y="208" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="222" style="fill:black;" font-family="Arial" font-size="16px">email</text>
+   <rect width="118" height="20" x="1104" y="228" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="242" style="fill:black;" font-family="Arial" font-size="16px">telephone</text>
+   <rect width="118" height="20" x="1104" y="248" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="262" style="fill:black;" font-family="Arial" font-size="16px">date_inscription</text>
+   <rect width="118" height="20" x="1104" y="268" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="282" style="fill:black;" font-family="Arial" font-size="16px">statut</text>
+   <rect width="118" height="20" x="1104" y="288" style="fill:none;stroke:black;"/>
+   <text width="118" height="20" x="1109" y="302" style="fill:black;" font-family="Arial" font-size="16px">Id_entraineur</text>
+   <rect width="155" height="20" x="759" y="469" style="fill:#007;stroke:black;"/>
+   <text width="155" height="20" x="764" y="483" style="fill:#fff;" font-family="Arial" font-size="16px"> Statistiques</text>
+   <rect width="155" height="20" x="759" y="489" style="fill:#aea;stroke:black;"/>
+   <text width="155" height="20" x="764" y="503" style="fill:black;" font-family="Arial" font-size="16px">Id_statistiques</text>
+   <rect width="155" height="20" x="759" y="509" style="fill:none;stroke:black;"/>
+   <text width="155" height="20" x="764" y="523" style="fill:black;" font-family="Arial" font-size="16px">matchs_joues</text>
+   <rect width="155" height="20" x="759" y="529" style="fill:none;stroke:black;"/>
+   <text width="155" height="20" x="764" y="543" style="fill:black;" font-family="Arial" font-size="16px">matchs_gagnes</text>
+   <rect width="155" height="20" x="759" y="549" style="fill:none;stroke:black;"/>
+   <text width="155" height="20" x="764" y="563" style="fill:black;" font-family="Arial" font-size="16px">matchs_perdus</text>
+   <rect width="155" height="20" x="759" y="569" style="fill:none;stroke:black;"/>
+   <text width="155" height="20" x="764" y="583" style="fill:black;" font-family="Arial" font-size="16px">pourcentage_victoire</text>
+   <rect width="155" height="20" x="759" y="589" style="fill:none;stroke:black;"/>
+   <text width="155" height="20" x="764" y="603" style="fill:black;" font-family="Arial" font-size="16px">Id_personne</text>
+</svg>

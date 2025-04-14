@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Ganttcbgrp" company="" webLink="http://" view-date="2025-01-01" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
+    <description/>
+    <view zooming-state="default:8" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="200" order="0"/>
+        <field id="tpd4" name="Date de début" width="75" order="1"/>
+        <field id="tpd5" name="Date de fin" width="75" order="2"/>
+        <field id="tpd15" name="Notes" width="20" order="3"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#000000 #ff9933 #33ff33 #ffff66 #33ffff]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="210" order="0"/>
+        <field id="1" name="Rôle par défaut" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="12" uid="81b90ed10292443b954438368db4d614" name="Réflexion projet - CDC..." color="#ff9933" meeting="false" start="2025-01-14" duration="1" complete="0" expand="true"/>
+        <task id="17" uid="7187bc43defe401e98671b8cb63db80c" name="Dossier commun" color="#ff9933" meeting="false" start="2025-02-24" duration="16" complete="0" expand="true"/>
+        <task id="31" uid="1996774d01b945d797cc465b66903a3f" name="Présentation RP1" color="#ff9933" meeting="false" start="2025-01-27" duration="1" complete="0" expand="true"/>
+        <task id="43" uid="bf64c95739a444468ce9c3c144c98ac3" name="RP2" color="#ff9933" meeting="false" start="2025-02-17" duration="1" complete="0" expand="true"/>
+        <task id="39" uid="ddb043e4fd1f41aea32778315a420c03" name="RP3" color="#ff9933" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="41" uid="215cba9bf66644ed8defc1e786d1bfe3" name="Préparation SF" color="#ff9933" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="1" uid="324cce2d5ac8476688fe49c9efde48a4" name="Mockup" color="#000000" meeting="false" start="2025-01-13" duration="10" complete="0" expand="true"/>
+        <task id="2" uid="d419c167f1344823b71af3cf55fc5d32" name="Dév. interface" color="#000000" meeting="false" start="2025-01-27" duration="8" complete="0" expand="true"/>
+        <task id="4" uid="cb36356481f34593907485e56ad061b1" name="Affichage stats" color="#000000" meeting="false" start="2025-02-06" duration="20" complete="0" expand="true"/>
+        <task id="44" uid="857b0b914d7c43e7973626697301a47b" name="Lien avec la BDD" color="#000000" meeting="false" start="2025-02-20" duration="2" complete="0" expand="true"/>
+        <task id="45" uid="b9eb2324e6194ce4b0c97cf5bfb65c9d" name="Récupération données BDD" color="#000000" meeting="false" start="2025-02-24" duration="3" complete="0" expand="true"/>
+        <task id="46" uid="8e6ae738fb3e4216955e24bb5ae4bc4c" name="Ecriture données BDD" color="#000000" meeting="false" start="2025-02-27" duration="5" complete="0" expand="true"/>
+        <task id="3" uid="664e1c510b7e4ca395b9936671d4530e" name="Auth. utilisateurs" color="#000000" meeting="false" start="2025-03-06" duration="10" complete="0" expand="true"/>
+        <task id="5" uid="924861f56431419e99ccc63837617605" name="Graphiques comparatifs" color="#000000" meeting="false" start="2025-03-20" duration="8" complete="0" expand="true"/>
+        <task id="11" uid="23706fb1edb1456a9221d7b99e72aa1a" name="Finalisation UI" color="#000000" meeting="false" start="2025-04-01" duration="9" complete="0" expand="true"/>
+        <task id="6" uid="526ca4b6780149e786de3bd8244358e5" name="Tests et corrections" color="#000000" meeting="false" start="2025-04-14" duration="15" complete="0" expand="true"/>
+        <task id="7" uid="ec7badc082bc46429f3700b05a43864b" name="Validation RGPD Site" color="#000000" meeting="false" start="2025-05-05" duration="6" complete="0" expand="true"/>
+        <task id="8" uid="f5c223262e5f4d65b0a2c23f4658f5f5" name="Documentation" color="#000000" meeting="false" start="2025-05-13" duration="2" complete="0" expand="true"/>
+        <task id="9" uid="c63cc252a7654bb58e2188760cebf4d3" name="Livraison" color="#000000" meeting="false" start="2025-05-15" duration="1" complete="0" expand="true"/>
+        <task id="13" uid="22334b2fc6af4cc8b017d97677d2803a" name="Mise en place des 2 serveurs" color="#33ffff" meeting="false" start="2025-01-15" duration="4" complete="0" expand="true"/>
+        <task id="14" uid="436cddaf46b74084ac90545009d3df8f" name="Définition BDD (schémas)" color="#33ffff" meeting="false" start="2025-01-21" duration="10" complete="0" expand="true"/>
+        <task id="15" uid="11e4267c13324fa7b5aaa249b11bf30b" name="Création groupe github" color="#33ffff" meeting="false" start="2025-01-21" duration="1" complete="0" expand="true"/>
+        <task id="16" uid="1d59b493b81c42619849d59065b4403a" name="Création BDD phpmyadmin" color="#33ffff" meeting="false" start="2025-02-03" duration="16" complete="0" expand="true"/>
+        <task id="18" uid="8b310a9b1aaa4f2c9ef02eee63f87a3c" name="Cas d'utilisation et autres" color="#33ffff" meeting="false" start="2025-02-03" duration="16" complete="0" expand="true"/>
+        <task id="19" uid="475c49ac98344bf48679bfcd6d2ebace" name="Gantt groupe" color="#33ffff" meeting="false" start="2025-03-03" duration="2" complete="0" expand="true"/>
+        <task id="20" uid="10a5ade1c5f34acbbe73392fdeb9e459" name="Mise en place des services BDD" color="#33ffff" meeting="false" start="2025-02-24" duration="7" complete="0" expand="true"/>
+        <task id="21" uid="b4cb8b968d1d44eb9fb644d34f05ad4d" name="Conformités RGPD BDD" color="#33ffff" meeting="false" start="2025-03-05" duration="7" complete="0" expand="true"/>
+        <task id="22" uid="3ed8740a3f7c44ab9190b33a1a0b14d6" name="Liste de &quot;pen-tests&quot;" color="#33ffff" meeting="false" start="2025-03-05" duration="7" complete="0" expand="true"/>
+        <task id="23" uid="4b88a4979fbc4c5892d3fba9b0b6b0d3" name="Analyses des besoins et conception" color="#ffff66" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="24" uid="18c246d1b1024d13a71dd6084be92d97" name="Choix de la tablette" color="#ffff66" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="25" uid="41e59994d49647eda3047af9df7ea20d" name="Dev. UI" color="#ffff66" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="26" uid="caefe46267b945b1a5f52392be095567" name="Gestion de l'authentification" color="#ffff66" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="27" uid="b18b0e9e965049db846ed00214b3e3d3" name="Dev. fonctionnalités principales" color="#ffff66" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="28" uid="ef4e450048cb4a85a682536098695e25" name="Tests et corrections" color="#ffff66" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="29" uid="e6b8f4e2a5914219941b5796ac825bb2" name="Finalisation et intégration" color="#ffff66" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="32" uid="8e508a45cca14c9bb51f5a102e198b83" name="finir liste matériel + validé" color="#33ff33" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="33" uid="9df924a0fb784bd9b2d586b2bb30b5db" name="établir base du système + test" color="#33ff33" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="34" uid="13318f36c04f478290e8e3666fb56e12" name="Vacances, prévoir matériels" color="#33ff33" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="35" uid="0a5d33859eb54e748fee3950ac9870c4" name="Réception matériels" color="#33ff33" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="36" uid="ea0f2c13a8ab428085d7977a36676450" name="Mise en place maquette" color="#33ff33" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="37" uid="e64a207c9c2a452aaaad2e827baaac28" name="Avancement projet + RP2" color="#33ff33" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="38" uid="b01f0eb2b87548fd80fd5a8c13cdd2f8" name="Enchaînement test et avancement" color="#33ff33" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+        <task id="40" uid="cb6d2c73fc0f42a08abc4a0ff2d2acb8" name="Finalisation dossier RP4" color="#33ff33" meeting="false" start="2025-01-13" duration="1" complete="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>

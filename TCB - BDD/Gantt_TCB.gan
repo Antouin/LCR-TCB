@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Projet_TCB" company="" webLink="http://" view-date="2025-01-13" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.3.3313" locale="fr_FR">
+    <description/>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="200" order="0"/>
+        <field id="tpd4" name="Date de début" width="75" order="1"/>
+        <field id="tpd5" name="Date de fin" width="75" order="2"/>
+        <field id="tpd15" name="Notes" width="20" order="3"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="210" order="0"/>
+        <field id="1" name="Rôle par défaut" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="1" uid="c79bbd7cf0cf43ccbf2380cfa6496a36" name="Réfléxion projet" meeting="false" start="2025-01-14" duration="1" complete="0" expand="true"/>
+        <task id="2" uid="42c3eb969ecd428bab35aaef5c1b2764" name="Lancement des 2 serveurs" meeting="false" start="2025-01-20" duration="1" complete="0" expand="true"/>
+        <task id="0" uid="d2cc108033ec4aea98ac013bd51d6938" name="Définir la BDD et faire les schéma" meeting="false" start="2025-01-21" duration="2" complete="0" expand="true"/>
+        <task id="3" uid="bce351100acb48e6b481fd6da995ad49" name="Diapositive RP1" meeting="false" start="2025-01-27" duration="1" complete="0" expand="true"/>
+        <task id="9" uid="a4594b3ab4584d1f8ebd08916d879b54" name="Création groupe Github" meeting="false" start="2025-02-03" duration="1" complete="0" expand="true"/>
+        <task id="8" uid="39d8517ff0dd4c299a891c35d8642a09" name="Création BDD sur phpmyadmin" meeting="false" start="2025-02-03" duration="3" complete="0" expand="true"/>
+        <task id="7" uid="fd165ccb0fd34fbf84dab80ea466412f" name="Dossier Commun" meeting="false" start="2025-02-03" duration="31" complete="0" expand="true"/>
+        <task id="10" uid="7f92c0ba3e2c47079c27c952fbfafd63" name="Cas d'utilisation / Catalogue des acteurs" meeting="false" start="2025-02-24" duration="1" complete="0" expand="true"/>
+        <task id="11" uid="5c99d285b67944d1ad55a35ce9d6f21d" name="Gantt" meeting="false" start="2025-02-24" duration="1" complete="0" expand="true"/>
+        <task id="6" uid="9bf0254fb57840799fa7a13992cc79ac" name="Mise en place des services" meeting="false" start="2025-02-25" duration="8" complete="0" expand="true"/>
+        <task id="4" uid="cdc80d43c6fa428f921547d62737c066" name="Conformités RGPD" meeting="false" start="2025-03-07" duration="7" complete="0" expand="true"/>
+        <task id="5" uid="40e097ed340644dbbc4a0384b03640cd" name="Liste &quot;pen-tests&quot;" meeting="false" start="2025-03-07" duration="7" complete="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
