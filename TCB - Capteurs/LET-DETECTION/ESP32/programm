@@ -1,1 +1,49 @@
+#include <WiFi.h>
+#include <PubSubClient.h>
 
+// === WiFi connection parameters ===
+const char* ssid = “TON_SSID”; // WiFi network name
+const char* password = “TON_MOTDE_PASSE”; // WiFi password
+
+// === MQTT broker address ===
+const char* mqtt_server = “192.168.1.10”; // Local IP of Raspberry Pi (broker)
+
+const int sensorPin = 34; // Analog pin used to read the sensor
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+// === WiFi network connection ===
+void setup_wifi() {
+  delay(10);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500); // Wait for connection
+  }
+}
+
+// === MQTT broker connection ===
+void reconnect() {
+  while (!client.connected()) {
+    if (client.connect(“ESP32Client”)) {
+      client.subscribe(“match/start”); // Subscribe if necessary
+    } else {
+      delay(5000); // Retry after 5 seconds
+    }
+  }
+}
+
+// === Setup function executed at startup ===
+void setup() {
+  pinMode(sensorPin, INPUT); // Initialize input sensor pin
+  Serial.begin(115200); // Initialize serial communication at 115200 bauds (for debugging purposes)
+  setup_wifi(); // WiFi connection
+  client.setServer(mqtt_server, 1883); // MQTT server and port configuration
+}
+
+// === Main loop executed continuously ===
+void loop() {
+  if (!client.connected()) {
+    reconnect(); // Automatic reconnection if disconnected from 
+
+Translated with DeepL.com (free version)
