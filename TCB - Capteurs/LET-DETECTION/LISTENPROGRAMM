@@ -1,0 +1,24 @@
+import paho.mqtt.client as mqtt
+
+# === Callback executed on broker connection ===
+def on_connect(client, userdata, flags, rc):
+    print(“Connected to broker with code”, rc)
+    client.subscribe(“let/detection”) # Subscribe to desired topics
+    client.subscribe(“button/click”)
+
+# === Callback executed on receipt of MQTT message ===
+def on_message(client, userdata, msg):
+    print(f“📩 Message received on {msg.topic} : {msg.payload.decode()}”)
+    if msg.topic == “let/detection”:
+        print(“LET detected!”)
+    elif msg.topic == “button/click”:
+        print(“Button pressed!”)
+
+# === MQTT client configuration ===
+client = mqtt.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+
+# === Connect to MQTT broker ===
+client.connect(“192.168.1.10”, 1883, 60) // IP_ADRESS + PORT + keep-alive interval
+client.loop_forever() # Infinite loop to listen to messages
