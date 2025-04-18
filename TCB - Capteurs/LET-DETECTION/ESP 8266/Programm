@@ -1,1 +1,56 @@
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
 
+// === WiFi parameters ===
+const char* ssid = “TON_SSID”;
+const char* password = “TON_MOT_DE_PASSE”;
+
+// === MQTT broker address ===
+const char* mqtt_server = “192.168.1.10”;
+
+const int buttonPin = D2; // Pin connected to a push-button
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+// === WiFi connection ===
+void setup_wifi() {
+  delay(10);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+  }
+}
+
+// === MQTT broker connection ===
+void reconnect() {
+  while (!client.connected()) {
+    if (client.connect(“ESP8266Client”)) {
+      client.subscribe(“match/start”);
+    } else {
+      delay(5000);
+    }
+  }
+}
+
+// === Initialization (executed once) ===
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP); // Use internal resistor for button
+  Serial.begin(115200); // Starts serial port (debug)
+  setup_wifi(); // WiFi connection
+  client.setServer(mqtt_server, 1883); // Set MQTT broker address
+}
+
+// === Continuous loop ===
+void loop() {
+  if (!client.connected()) {
+    reconnect(); // Reconnect MQTT if necessary
+  }
+  client.loop(); // Handles incoming MQTT messages
+
+  if (digitalRead(buttonPin) == LOW) { // If button pressed (active LOW)
+    client.publish(“button/click”, “1”); // Send a message
+    delay(1000); // Pause to avoid double clicks 
+  
+
+Translated with DeepL.com (free version)
