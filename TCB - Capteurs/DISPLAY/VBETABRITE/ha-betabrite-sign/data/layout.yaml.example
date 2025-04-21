@@ -1,0 +1,21 @@
+variables:
+  current_time:
+    type: time
+    color: red
+  current_date:
+    type: date
+    color: yellow
+  static_text:
+    type: static
+    text: "Betabrite Sign Test"
+display:
+  main:
+    queue:
+      - message:
+          - current_time
+          - current_date
+        mode: hold
+      - message:
+          - static_text
+        mode: "rotate"
+        color: "rainbow1"
