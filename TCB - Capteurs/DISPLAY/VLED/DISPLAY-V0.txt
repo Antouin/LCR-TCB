@@ -1,0 +1,95 @@
+#include "led-matrix.h"
+#include "graphics.h"
+#include <mosquitto.h>
+#include <unistd.h>
+#include <signal.h>
+#include <iostream>
+#include <string>
+
+using namespace rgb_matrix;
+
+volatile bool interrupt_received = false;
+RGBMatrix *matrix = nullptr;
+FrameCanvas *canvas = nullptr;
+Font font;
+
+static void InterruptHandler(int signo) {
+    interrupt_received = true;
+}
+
+// Affichage du texte reçu
+static void DrawText(FrameCanvas *canvas, const std::string& message) {
+    canvas->Clear();
+    Color text_color(255, 255, 0);  // Jaune
+    DrawText(canvas, font, 2, 30, text_color, nullptr, message.c_str(), 0);
+    canvas = matrix->SwapOnVSync(canvas);
+}
+
+// Callback MQTT
+void mqtt_callback(struct mosquitto *mosq, void *obj, const struct mosquitto_message *msg) {
+    if (msg->payload) {
+        std::string received_text(static_cast<char *>(msg->payload));
+        DrawText(canvas, received_text);
+        sleep(5);
+        canvas->Clear();
+        canvas = matrix->SwapOnVSync(canvas);
+    }
+}
+
+int main(int argc, char *argv[]) {
+    // Options par défaut
+    RGBMatrix::Options options;
+    RuntimeOptions runtime_opt;
+    options.rows = 64;
+    options.cols = 64;
+    options.chain_length = 1;
+    options.parallel = 1;
+    options.hardware_mapping = "regular";
+
+    // Création de la matrice avec arguments CLI (ex: --led-no-hardware-pulse)
+    matrix = CreateMatrixFromFlags(&argc, &argv, &options, &runtime_opt);
+    if (matrix == nullptr) {
+        std::cerr << "Erreur de création de la matrice LED." << std::endl;
+        return 1;
+    }
+
+    canvas = matrix->CreateFrameCanvas();
+
+    if (!font.LoadFont("fonts/7x13.bdf")) {
+        std::cerr << "Erreur de chargement de la police." << std::endl;
+        return 1;
+    }
+
+    // Initialisation MQTT
+    mosquitto_lib_init();
+    struct mosquitto *mosq = mosquitto_new("led-matrix-client", true, nullptr);
+    if (!mosq) {
+        std::cerr << "Erreur d'initialisation MQTT" << std::endl;
+        return 1;
+    }
+
+    mosquitto_username_pw_set(mosq, "broker", "tcbBROKER");
+    mosquitto_message_callback_set(mosq, mqtt_callback);
+
+    if (mosquitto_connect(mosq, "10.160.99.33", 1883, 60) != MOSQ_ERR_SUCCESS) {
+        std::cerr << "Erreur de connexion au broker MQTT" << std::endl;
+        return 1;
+    }
+
+    mosquitto_subscribe(mosq, nullptr, "LET", 0);
+
+    signal(SIGTERM, InterruptHandler);
+    signal(SIGINT, InterruptHandler);
+
+    while (!interrupt_received) {
+        mosquitto_loop(mosq, -1, 1);
+    }
+
+    // Nettoyage
+    mosquitto_destroy(mosq);
+    mosquitto_lib_cleanup();
+    matrix->Clear();
+    delete matrix;
+
+    return 0;
+}

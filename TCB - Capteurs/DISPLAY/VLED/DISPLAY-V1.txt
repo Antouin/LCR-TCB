@@ -1,0 +1,121 @@
+#include "led-matrix.h"
+#include "graphics.h"
+#include <mosquitto.h>
+#include <unistd.h>
+#include <signal.h>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <jsoncpp/json/json.h>
+
+using namespace rgb_matrix;
+
+volatile bool interrupt_received = false;
+RGBMatrix *matrix = nullptr;
+FrameCanvas *canvas = nullptr;
+Font font;
+
+static void InterruptHandler(int signo) {
+    interrupt_received = true;
+}
+
+// Affiche le score tennis formaté
+static void DrawScore(FrameCanvas *canvas, const Json::Value &data) {
+    canvas->Clear();
+    Color color(0, 255, 0); // Vert
+
+    int x = 0;
+    int y = 6;
+
+    DrawText(canvas, font, x, y, color, nullptr, "HOME", 0);
+    DrawText(canvas, font, x + 35, y, color, nullptr, "VISIT", 0);
+
+    y += 7;
+    DrawText(canvas, font, x, y, color, nullptr, ("Set:" + std::to_string(data["home_sets"].asInt())).c_str(), 0);
+    DrawText(canvas, font, x + 35, y, color, nullptr, ("Set:" + std::to_string(data["visit_sets"].asInt())).c_str(), 0);
+
+    y += 7;
+    DrawText(canvas, font, x, y, color, nullptr, ("Pts:" + std::to_string(data["home_points"].asInt())).c_str(), 0);
+    DrawText(canvas, font, x + 35, y, color, nullptr, ("Pts:" + std::to_string(data["visit_points"].asInt())).c_str(), 0);
+
+    y += 7;
+    DrawText(canvas, font, x, y, color, nullptr, ("Tot:" + std::to_string(data["home_total"].asInt())).c_str(), 0);
+    DrawText(canvas, font, x + 35, y, color, nullptr, ("Tot:" + std::to_string(data["visit_total"].asInt())).c_str(), 0);
+
+    canvas = matrix->SwapOnVSync(canvas);
+}
+
+// Callback MQTT
+void mqtt_callback(struct mosquitto *mosq, void *obj, const struct mosquitto_message *msg) {
+    if (!msg->payload) return;
+
+    std::string payload(static_cast<char *>(msg->payload));
+
+    Json::Value root;
+    Json::CharReaderBuilder builder;
+    std::string errs;
+
+    std::istringstream s(payload);
+    if (Json::parseFromStream(builder, s, &root, &errs)) {
+        DrawScore(canvas, root);
+    } else {
+        std::cerr << "Erreur de parsing JSON : " << errs << std::endl;
+    }
+}
+
+int main(int argc, char *argv[]) {
+    // Options matrice
+    RGBMatrix::Options options;
+    RuntimeOptions runtime_opt;
+    options.rows = 64;
+    options.cols = 64;
+    options.chain_length = 1;
+    options.parallel = 1;
+    options.hardware_mapping = "regular";
+
+    matrix = CreateMatrixFromFlags(&argc, &argv, &options, &runtime_opt);
+    if (matrix == nullptr) {
+        std::cerr << "Erreur de création de la matrice LED." << std::endl;
+        return 1;
+    }
+
+    canvas = matrix->CreateFrameCanvas();
+
+    if (!font.LoadFont("fonts/4x6.bdf")) {
+        std::cerr << "Erreur de chargement de la police 4x6.bdf" << std::endl;
+        return 1;
+    }
+
+    // MQTT setup
+    mosquitto_lib_init();
+    struct mosquitto *mosq = mosquitto_new("score-tennis", true, nullptr);
+    if (!mosq) {
+        std::cerr << "Erreur d'initialisation MQTT" << std::endl;
+        return 1;
+    }
+
+    mosquitto_username_pw_set(mosq, "broker", "tcbBROKER");
+    mosquitto_message_callback_set(mosq, mqtt_callback);
+
+    if (mosquitto_connect(mosq, "10.160.99.33", 1883, 60) != MOSQ_ERR_SUCCESS) {
+        std::cerr << "Erreur de connexion au broker MQTT" << std::endl;
+        return 1;
+    }
+
+    mosquitto_subscribe(mosq, nullptr, "SCORE/TENNIS", 0);
+
+    signal(SIGTERM, InterruptHandler);
+    signal(SIGINT, InterruptHandler);
+
+    while (!interrupt_received) {
+        mosquitto_loop(mosq, -1, 1);
+    }
+
+    // Nettoyage
+    mosquitto_destroy(mosq);
+    mosquitto_lib_cleanup();
+    matrix->Clear();
+    delete matrix;
+
+    return 0;
+}
