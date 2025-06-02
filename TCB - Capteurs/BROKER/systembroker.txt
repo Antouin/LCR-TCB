@@ -1,0 +1,52 @@
+1. Rôle du MQTT Broker
+
+Le broker MQTT joue un rôle central dans la communication entre les différents équipements du système. Il permet de transmettre les messages entre les capteurs, l'application de gestion des scores et l'afficheur LED. Le protocole MQTT a été choisi pour sa légèreté, sa simplicité d'utilisation et sa compatibilité avec les objets connectés (IoT).
+
+2. Lien MQTT pour l'afficheur
+
+Le topic MQTT utilisé pour transmettre les informations vers l'afficheur LED est :
+
+match/score/display
+
+Les messages envoyés sur ce topic contiennent les informations du score sous forme de chaîne de caractères formatée, par exemple :
+
+{
+  "home": 3,
+  "visit": 2,
+  "sets": [6, 4, 7],
+  "current_set": 3
+}
+
+3. Afficheur LED – Programme
+
+L'afficheur LED utilise la bibliothèque rpi-rgb-led-matrix pour afficher les scores reçus par MQTT. Le programme Python exécuté en boucle s'abonne au topic match/score/display et met à jour dynamiquement le contenu affiché selon le message reçu.
+
+Ce programme est lancé automatiquement au démarrage via un service systemd.
+
+4. Point d'accès RaspAP
+
+Pour permettre la connexion directe des équipements au broker MQTT sans infrastructure réseau externe, un point d'accès Wi-Fi a été créé avec RaspAP sur la Raspberry Pi hébergeant le broker.
+
+Ce point d'accès permet :
+
+Une communication locale et stable entre les dispositifs.
+
+Un contrôle total de l'environnement réseau.
+
+SSID utilisé : ScoreSystem
+
+5. Sécurité
+
+Pour renforcer la sécurité du système, plusieurs mesures ont été mises en place :
+
+Désactivation de l'accès SSH : le service SSH est désactivé une fois le déploiement terminé.
+
+Accès au broker restreint : seul le réseau local (créé par RaspAP) peut accéder au broker.
+
+Pas de service inutile activé sur la Raspberry Pi pour limiter les failles potentielles.
+
+Surveillance manuelle : toutes les communications sont observables via logs MQTT ou outils de supervision si besoin.
+
+6. Conclusion
+
+Ce système de communication MQTT permet une grande flexibilité pour l'affichage des scores, tout en garantissant une autonomie locale grâce au point d'accès RaspAP et une bonne sécurité par la réduction de la surface d'attaque.
