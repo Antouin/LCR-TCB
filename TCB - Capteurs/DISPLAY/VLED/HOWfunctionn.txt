@@ -1,0 +1,10 @@
+Un afficheur LED RGB (comme ceux utilisés avec une Raspberry Pi) est un écran composé de centaines voire de milliers de petites lumières appelées LED (diodes électroluminescentes). Chaque pixel de l’écran est en réalité une LED tricolore appelée LED RGB, qui peut afficher n’importe quelle couleur en combinant différentes intensités de Rouge (Red), Vert (Green) et Bleu (Blue), un peu comme un mélange de peinture.
+
+Les LED sont organisées sous forme de matrice, c’est-à-dire en lignes et en colonnes (par exemple 64 lignes et 64 colonnes). Cela fait donc 4096 pixels (64 x 64), chacun capable de s’allumer dans une couleur différente. Pour afficher une image ou du texte, il faut donc pouvoir allumer chaque pixel individuellement, dans la bonne couleur, au bon moment.
+
+Cependant, pour des raisons techniques (consommation électrique et coût des composants), on n’allume pas toutes les LED en même temps. À la place, on utilise une technique appelée multiplexage : on allume une ligne à la fois, très rapidement, et on change les lignes en continu (plusieurs centaines de fois par seconde). Grâce à la persistance rétinienne (phénomène qui fait que nos yeux gardent une image brièvement), on a l’impression que toutes les LED sont allumées en même temps.
+
+Pour gérer cet affichage très rapide, on utilise une carte appelée HAT LED (qui se branche directement sur les broches GPIO de la Raspberry Pi). Ce HAT joue le rôle de traducteur : il reçoit des instructions de la Raspberry Pi (comme “allume le pixel numéro 5 en rouge”) et les transforme en signaux électriques précis pour contrôler la matrice LED. Le HAT gère aussi la vitesse, l’ordre d’affichage des lignes, et les couleurs grâce à un système de PWM (modulation de largeur d’impulsion) qui permet de faire varier l’intensité lumineuse de chaque composante R, G et B.
+
+En résumé, un afficheur LED RGB fonctionne en allumant des milliers de petites lumières colorées très rapidement et de façon contrôlée, grâce à une carte spécialisée (le HAT) et à un programme qui pilote l’ensemble depuis la Raspberry Pi.
+
