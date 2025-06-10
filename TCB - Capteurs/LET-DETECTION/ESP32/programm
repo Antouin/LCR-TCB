@@ -1,49 +1,105 @@
-#include <WiFi.h>
-#include <PubSubClient.h>
+#include "WiFi.h"
+#include "PubSubClient.h"
+#include "Wire.h"
+#include <iostream>
 
-// === WiFi connection parameters ===
-const char* ssid = “TON_SSID”; // WiFi network name
-const char* password = “TON_MOTDE_PASSE”; // WiFi password
+// Paramètres Wi-Fi
+const char *ssid = "TP-ciel";
+const char *password = "Azerty.1";
 
-// === MQTT broker address ===
-const char* mqtt_server = “192.168.1.10”; // Local IP of Raspberry Pi (broker)
+// Configuration du broker MQTT
+const char *mqtt_broker = "10.160.99.33";
+const char *topic = "LET";
+const char *mqtt_username = "broker";
+const char *mqtt_password = "tcbBROKER";
+const int mqtt_port = 1883;
 
-const int sensorPin = 34; // Analog pin used to read the sensor
-
+// Objets WiFi/MQTT
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-// === WiFi network connection ===
-void setup_wifi() {
-  delay(10);
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500); // Wait for connection
-  }
-}
+// Capteur
+const int sensorPin = 13;
+int lastState = LOW;
 
-// === MQTT broker connection ===
-void reconnect() {
-  while (!client.connected()) {
-    if (client.connect(“ESP32Client”)) {
-      client.subscribe(“match/start”); // Subscribe if necessary
-    } else {
-      delay(5000); // Retry after 5 seconds
+// LED bleue (généralement GPIO 2 sur ESP32)
+const int ledPin = 2;
+
+// Callback MQTT
+void callback(char *topic, byte *payload, unsigned int length) {
+    Serial.print("Message reçu sur le topic: ");
+    Serial.println(topic);
+    Serial.print("Message: ");
+    for (int i = 0; i < length; i++) {
+        Serial.print((char)payload[i]);
     }
-  }
+    Serial.println();
+    Serial.println("-----------------------");
 }
 
-// === Setup function executed at startup ===
 void setup() {
-  pinMode(sensorPin, INPUT); // Initialize input sensor pin
-  Serial.begin(115200); // Initialize serial communication at 115200 bauds (for debugging purposes)
-  setup_wifi(); // WiFi connection
-  client.setServer(mqtt_server, 1883); // MQTT server and port configuration
+    Serial.begin(115200);
+
+    pinMode(sensorPin, INPUT);
+    pinMode(ledPin, OUTPUT);
+    digitalWrite(ledPin, LOW);
+
+    // Connexion au Wi-Fi
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.println("Connexion au WiFi en cours...");
+    }
+    Serial.println("Connecté au réseau WiFi");
+
+    // Affichage de l'adresse IP
+    Serial.print("Adresse IP de l'ESP32 : ");
+    Serial.println(WiFi.localIP());
+
+    // Connexion au broker MQTT
+    client.setServer(mqtt_broker, mqtt_port);
+    client.setCallback(callback);
+
+    while (!client.connected()) {
+        String client_id = "esp32-client-";
+        client_id += String(WiFi.macAddress());
+        Serial.printf("Le client %s se connecte au broker MQTT\n", client_id.c_str());
+
+        if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+            Serial.println("Connecté au broker MQTT");
+        } else {
+            Serial.print("Échec de connexion, état: ");
+            Serial.println(client.state());
+            delay(2000);
+        }
+    }
+
+    // Inscription au topic
+    client.subscribe(topic);
 }
 
-// === Main loop executed continuously ===
 void loop() {
-  if (!client.connected()) {
-    reconnect(); // Automatic reconnection if disconnected from 
+    client.loop(); // MQTT keep-alive
 
-Translated with DeepL.com (free version)
+    // Clignotement de la LED si connecté au Wi-Fi
+    if (WiFi.status() == WL_CONNECTED) {
+        digitalWrite(ledPin, HIGH);
+        delay(250);
+        digitalWrite(ledPin, LOW);
+        delay(250);
+    } else {
+        digitalWrite(ledPin, LOW);
+    }
+
+    // Lecture capteur et envoi si changement d'état
+    int sensorState = digitalRead(sensorPin);
+    Serial.println(sensorState);
+
+    if (sensorState == HIGH && lastState == LOW) {
+        Serial.println("État haut détecté, envoi au broker...");
+        client.publish(topic, "true");
+        delay(15000);
+    }
+
+    lastState = sensorState;
+}
